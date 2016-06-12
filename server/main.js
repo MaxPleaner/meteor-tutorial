@@ -5,5 +5,7 @@ Meteor.startup(() => {
 });
 
 Meteor.publish("userStatus", function() {
-  return Meteor.users.find({ "status.online": true }, {fields: {email : 1, status : 1}});
+  return Meteor.users.find(
+    { "status.online": true },
+  );
 });

@@ -9,7 +9,7 @@
 </body>
 
 <template name="hello">
-  {{#each usersOnline}}
-    {{email }}
+  {{#each user in usersOnline}}
+    {{emailString user.emails}}
   {{/each}}
 </template>
