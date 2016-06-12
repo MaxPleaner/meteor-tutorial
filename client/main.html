@@ -1,0 +1,15 @@
+<head>
+  <title>simple</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+  {{> loginButtons}}
+  {{> hello}}
+</body>
+
+<template name="hello">
+  {{#each usersOnline}}
+    {{email }}
+  {{/each}}
+</template>
