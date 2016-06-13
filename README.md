@@ -1,4 +1,4 @@
-[king tut](spaceDagger.jpg)
+![king tut](/spaceDagger.jpg)
 
 ## About
 
