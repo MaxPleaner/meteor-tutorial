@@ -29,3 +29,12 @@ These resources were particularly useful, though:
 ## How to run
 
 Clone the repo and `meteor run`.
+
+## Where is the source code
+
+There are just four files in here. Not so intimating, right?
+
+- [client/main.css](./client/main.css)
+- [client/main.html](./client/main.html)
+- [client/main.js](./client/main.js)
+- [server/main.js](./server/main.js)
