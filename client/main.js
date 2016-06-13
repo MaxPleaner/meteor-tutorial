@@ -9,6 +9,13 @@ Meteor.startup(function(){
     Meteor.subscribe("userStatus")
 })
 
+// Used to show a list of emails for online users
+Template.hello.helpers({
+  usersOnline() {
+    return Meteor.users.find({}, { fields: { emails: 1 } })
+  }
+})
+
 // Load the Google Map when the template is rendered.
 Template.map.onRendered(function() {
   GoogleMaps.load( { v: '3', key: 'AIzaSyD_eSUViM3ppuaIXVzpCnkVELAPYQ2XWMY' } );
