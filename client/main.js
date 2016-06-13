@@ -48,9 +48,27 @@ Template.map.onCreated(function(){
       if (! latLng) { return; }
       var user = Meteor.user()
       if (user) {
+        let lat = latLng.lat, lng = latLng.lng;
+
+        // introduce some variation into the geolocations
+        // this block can be uncommented.
+//           if (window.lat && window.lng) {
+//               lat = window.lat.get(), lng = window.lng.get()
+//             } else {
+//               window.lat = new ReactiveVar(), window.lng = new ReactiveVar()
+//             }
+//             if (!(window.geolocationRandomnessInterval)) {
+//               window.geolocationRandomnessInterval = window.setInterval(function() {
+//                 window.lat.set(Math.random() * 180)
+//                 window.lng.set(Math.random() * 180)
+//                 Meteor.call("updateUser", {
+//                   _id: user._id, latitude: window.lat, longitude: window.lng
+//                 })
+//               }, 1000)
+//             }
+
         Meteor.call("updateUser", {
-//           _id: user._id, latitude: latLng.lat, longitude: latLng.lng
-          _id: user._id, latitude: (Math.random() * 180), longitude: (Math.random() * 180)
+          _id: user._id, latitude: lat, longitude: lng
         })
       }
     })
