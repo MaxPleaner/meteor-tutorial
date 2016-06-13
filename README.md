@@ -13,6 +13,7 @@ In summary, when a User signs in, they see themself and all other signed in user
 - It has Meteor's accounts system, which I didn't have to write much code for.
 - It uses the [mizzao:meteor-user-status](https://github.com/mizzao/meteor-user-status) package to publish a list of online users to the client.
 - It uses the [dburles:google-maps](https://atmospherejs.com/dburles/google-maps) and [mdg:geolocation](https://atmospherejs.com/mdg/geolocation) packages to geolocate users and plot them on a map.
+- Autopublish is removed
 
 ## How was it built
 
