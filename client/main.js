@@ -33,7 +33,6 @@ Template.map.onCreated(function(){
       Meteor.users.find(
         {}, { fields: { latitude: 1, longitude: 1, emails: 1 } }
       ).forEach(function(user){
-        console.log(user)
         if (!(self.markers)) { self.markers = {} }
         if (!(self.markers[user._id])) {
           self.markers[user._id] = new google.maps.Marker({
@@ -48,27 +47,21 @@ Template.map.onCreated(function(){
       if (! latLng) { return; }
       var user = Meteor.user()
       if (user) {
-        let lat = latLng.lat, lng = latLng.lng;
+        if (!window.lat || !window.lng) {
+          window.lat = new ReactiveVar(latLng.lat), window.lng = new ReactiveVar(latLng.lng)
+        }
 
         // introduce some variation into the geolocations
-        // this block can be uncommented.
-//           if (window.lat && window.lng) {
-//               lat = window.lat.get(), lng = window.lng.get()
-//             } else {
-//               window.lat = new ReactiveVar(), window.lng = new ReactiveVar()
-//             }
-//             if (!(window.geolocationRandomnessInterval)) {
-//               window.geolocationRandomnessInterval = window.setInterval(function() {
-//                 window.lat.set(Math.random() * 180)
-//                 window.lng.set(Math.random() * 180)
-//                 Meteor.call("updateUser", {
-//                   _id: user._id, latitude: window.lat, longitude: window.lng
-//                 })
-//               }, 1000)
-//             }
+        // this block can be commented/uncommented.
+        if (!(window.geolocationRandomnessInterval)) {
+          window.geolocationRandomnessInterval = window.setInterval(function() {
+            window.lat.set(Math.random() * 180)
+            window.lng.set(Math.random() * 180)
+          }, 1000)
+        }
 
         Meteor.call("updateUser", {
-          _id: user._id, latitude: lat, longitude: lng
+          _id: user._id, latitude: lat.get(), longitude: lng.get()
         })
       }
     })
