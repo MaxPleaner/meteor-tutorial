@@ -6,10 +6,21 @@
   <h1>Welcome to Meteor!</h1>
   {{> loginButtons}}
   {{> hello}}
+  {{> map}}
 </body>
 
 <template name="hello">
   {{#each user in usersOnline}}
-    {{emailString user.emails}}
+    {{user.emails.[0].address}}
   {{/each}}
+</template>
+
+<template name="map">
+  <div class="map-container">
+    {{#unless geolocationError}}
+      {{> googleMap name="map" options=exampleMapOptions}}
+    {{else}}
+      Geolocation failed: {{geolocationError}}
+    {{/unless}}
+  </div>
 </template>

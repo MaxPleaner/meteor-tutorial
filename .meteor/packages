@@ -21,3 +21,5 @@ insecure                # Allow all DB writes from clients (for prototyping)
 accounts-ui
 accounts-password
 mizzao:user-status
+dburles:google-maps
+mdg:geolocation
