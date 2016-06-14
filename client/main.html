@@ -5,11 +5,11 @@
 <body>
   <h1>Welcome to Meteor!</h1>
   {{> loginButtons}}
-  {{> hello}}
+  {{> userList}}
   {{> map}}
 </body>
 
-<template name="hello">
+<template name="userList">
   {{#each user in usersOnline}}
     {{user.emails.[0].address}}
   {{/each}}
