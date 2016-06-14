@@ -10,7 +10,7 @@ Meteor.startup(function(){
 })
 
 // Used to show a list of emails for online users
-Template.hello.helpers({
+Template.userList.helpers({
   usersOnline() {
     return Meteor.users.find({}, { fields: { emails: 1 } })
   }
