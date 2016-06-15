@@ -8,6 +8,10 @@ I had previously build a site with much of the same functionality using Express.
 
 Needless to say, that took __way__ more effort and has many more lines of code. That project can be seen at [https://github.com/maxpleaner/marktplatz](https://github.com/maxpleaner/marktplatz).
 
+## Tutorial
+
+This now has an accompanying tutorial at [https://medium.com/@maxpleaner/meteor-tutorial-plotting-online-users-on-a-map-adf3c3d1ebc6](https://medium.com/@maxpleaner/meteor-tutorial-plotting-online-users-on-a-map-adf3c3d1ebc6#.zfr40gsqu)
+
 ## What it does
 
 In summary, when a User signs in, they see themself and all other signed in users plotted on a map.
