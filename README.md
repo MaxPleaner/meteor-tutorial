@@ -1,4 +1,3 @@
-![king tut](/spaceDagger.jpg)
 
 ## About
 
